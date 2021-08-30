@@ -11,7 +11,7 @@ function App() {
       </header>
       <main className="App-main">
         <ItemListContainer 
-          greeting="Hola" 
+          greeting="Products" 
         />
       </main>
     </div>

@@ -37,3 +37,11 @@
   justify-content: center;
   margin: 0 15% 0 15%;
 }
+
+.item-list-container {
+  flex:1
+}
+
+.item-count-actions {
+  justify-content: space-between;
+}

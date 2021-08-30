@@ -6,7 +6,7 @@ function NavBar() {
         <nav className="nav-bar">
             <img src="https://picsum.photos/200" alt=""/>
             <ul className ="nav-bar-options">
-                {optionsNavBar.map(opt => <li>{opt}</li>)}
+                {optionsNavBar.map(opt => <li key={opt}>{opt}</li>)}
                 <li><CartWidget /></li>
             </ul>
         </nav>
