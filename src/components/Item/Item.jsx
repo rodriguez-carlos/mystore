@@ -1,12 +1,11 @@
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
+import CardHeader from '@material-ui/core/CardHeader'
 
-
-const Item = ({title, stock, image}) => {
+const Item = ({title, stock, image, category, description}) => {
     return (
         <CardActionArea>
-            <Typography variant="subtitle2">{title} (STOCK {stock})</Typography>
+            <CardHeader title={title} subheader={category}/>
             <CardMedia 
                 component="img"
                 image={image}
