@@ -18,8 +18,19 @@ function App() {
                 greeting="Products" 
               />
             </Route>
+            <Route exact path="/category/:categoryId">
+              <ItemListContainer 
+              
+              />
+            </Route>
             <Route exact path={`/product/:paramId`}>
               <ItemDetailContainer />
+            </Route>
+            <Route exact path="/contact" >
+              <h1>Contact page under construction.</h1>
+            </Route>
+            <Route exact path="/cart" >
+              <h1>Cart page under construction.</h1>
             </Route>
           </main>
         </Switch>

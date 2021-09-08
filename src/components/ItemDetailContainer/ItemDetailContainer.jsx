@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import productsList from '../../assets/datamock'
 import { useParams } from 'react-router-dom'
+import productsList from '../../assets/datamock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 console.log(productsList)
@@ -20,12 +20,13 @@ function getProduct(id) {
 function ItemDetailContainer() {
     const [product, setProduct] = useState({})
     const { paramId } = useParams()
+    const addToCart = () => console.log('Added to cart')
     console.log(paramId)
     useEffect(() => {
         fakeApiCall(paramId)
             .then((res) => { console.log(res); setProduct(res) })
             .catch(e => console.log(e))
-    }, [paramId])
+        }, [paramId])
     return (
         <div className="item-detail-container">
             <ItemDetail 
@@ -35,6 +36,7 @@ function ItemDetailContainer() {
                 category={product.category}
                 price={product.productPrice}
                 description={product.productDescription}
+                onAdd={addToCart}
             />
         </div>
     )

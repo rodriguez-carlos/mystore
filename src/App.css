@@ -58,7 +58,19 @@ a {
 }
 
 .item-detail-container {
-  width: 90%;
+  min-width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-detail {
+  width: 100%;
+}
+
+.card-detail-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .detail-right {
