@@ -1,9 +1,8 @@
-import ItemCount from '../ItemCount/ItemCount'
 import Item from '../Item/Item'
 import Grid from '@material-ui/core/Grid'
 import { Link } from 'react-router-dom'
 
-const ItemList = ({onAdd, products}) => {
+const ItemList = ({products}) => {
         return (
         <Grid container spacing={3}>
             {products.map((item) => (
@@ -16,11 +15,6 @@ const ItemList = ({onAdd, products}) => {
                             category={item.category}
                         /> 
                     </Link>
-                    <ItemCount
-                        stock={item.productStock}
-                        initial="0"
-                        onAdd={onAdd}
-                    />
                 </Grid>
             ))}
         </Grid>

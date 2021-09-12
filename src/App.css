@@ -43,11 +43,12 @@ header {
 }
 
 .item-list-container {
-  flex:1
+  flex:1;
 }
 
 .item-count-actions {
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 a {
