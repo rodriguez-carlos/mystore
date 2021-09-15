@@ -20,8 +20,6 @@ function getProduct(id) {
 function ItemDetailContainer() {
     const [product, setProduct] = useState({})
     const { paramId } = useParams()
-    const addToCart = () => console.log('Added to cart')
-    console.log(paramId)
     useEffect(() => {
         fakeApiCall(paramId)
             .then((res) => { console.log(res); setProduct(res) })
@@ -36,7 +34,6 @@ function ItemDetailContainer() {
                 category={product.category}
                 price={product.productPrice}
                 description={product.productDescription}
-                onAdd={addToCart}
             />
         </div>
     )
