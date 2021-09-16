@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState  } from 'react'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -12,7 +12,6 @@ const ItemCount = ({stock, initial, onAdd, cartActions, disableAddAndRemove}) =>
     const [count, setCount] = useState(parseInt(initial))
     const incrementCount = () => setCount((count) => count + 1)
     const decrementCount = () => setCount((count) => count - 1)
-
 
     return (
         <Card>
@@ -48,7 +47,6 @@ const ItemCount = ({stock, initial, onAdd, cartActions, disableAddAndRemove}) =>
                         disabled={count <= 0}
                         onClick={() => onAdd(count)}
                         fullWidth 
-                        color="error"
                         variant="contained"
                         endIcon={<AddShoppingCartIcon />}>
                         add to cart

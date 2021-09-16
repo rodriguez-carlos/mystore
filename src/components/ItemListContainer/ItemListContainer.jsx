@@ -6,7 +6,6 @@ import productsList from '../../assets/datamock'
 let fakeApiCall = (categoryId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log("Calling fake API")
             resolve(getProducts(categoryId))
         }, 2000)
     })
@@ -27,7 +26,7 @@ function ItemListContainer ({greeting}) {
     useEffect(() => {
         setProducts([])
         fakeApiCall(categoryId)
-            .then((res) => { console.log(res); setProducts(res) })
+            .then((res) => { setProducts(res) })
             .catch(e => console.log(e))
     }, [categoryId])
     return (

@@ -22,18 +22,13 @@ function ItemDetailContainer() {
     const { paramId } = useParams()
     useEffect(() => {
         fakeApiCall(paramId)
-            .then((res) => { console.log(res); setProduct(res) })
+            .then((res) => { setProduct(res) })
             .catch(e => console.log(e))
         }, [paramId])
     return (
         <div className="item-detail-container">
             <ItemDetail 
-                title={product.productName}
-                image={product.image}
-                stock={product.productStock}
-                category={product.category}
-                price={product.productPrice}
-                description={product.productDescription}
+                product={product}
             />
         </div>
     )
