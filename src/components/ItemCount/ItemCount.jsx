@@ -8,16 +8,25 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import RemoveIcon from '@material-ui/icons/Remove'
 
-const ItemCount = ({stock, initial, onAdd, cartActions, disableAddAndRemove}) => {
+const ItemCount = ({item, stock, initial, onAdd, cartActions, disableAddAndRemove, countInCart, modifyQuantity, removeItem }) => {
     const [count, setCount] = useState(parseInt(initial))
-    const incrementCount = () => setCount((count) => count + 1)
-    const decrementCount = () => setCount((count) => count - 1)
+    const incrementCount = () => {
+        let newCount = count + 1
+        setCount(newCount)
+        if(countInCart) modifyQuantity(item.item, newCount)
+    }
+    const decrementCount = () => {
+        let newCount = count - 1
+        setCount(newCount)
+        if(countInCart) modifyQuantity(item.item, newCount)
+    }
+    if(countInCart === true && count <= 0) removeItem(item.item)
 
     return (
         <Card>
             <CardActions classes={{ root: "item-count-actions" }}>
                 <Button
-                    disabled={count <= 0 || disableAddAndRemove}
+                    disabled={count <=0 || disableAddAndRemove}
                     onClick={decrementCount}
                     color='secondary'
                     variant="contained"
@@ -33,7 +42,8 @@ const ItemCount = ({stock, initial, onAdd, cartActions, disableAddAndRemove}) =>
                 ><AddIcon /></Button>
             </CardActions>
             <CardActions classes={{ root: "item-count-actions" }}>
-                {
+                {countInCart ? "" 
+                :
                     cartActions ? 
                     <div> 
                     <Link to='/cart'>

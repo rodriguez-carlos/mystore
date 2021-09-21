@@ -80,3 +80,28 @@ a {
   flex-direction: column;
   align-items: left;
 }
+
+.cart-container {
+  flex: 1;
+}
+
+.image-in-cart.MuiCardMedia-media {
+  width: 50%;
+}
+
+.cart-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.purchase-form .MuiFormControl-root {
+  margin: 10px;
+}
+
+.delete-button {
+  cursor: pointer;
+}

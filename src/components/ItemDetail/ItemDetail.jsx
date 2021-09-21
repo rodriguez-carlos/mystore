@@ -21,8 +21,7 @@ const ItemDetail = ({ product }) => {
     }
     return (
         <Card elevation={3} className="card-detail">
-            <CardHeader title={productName ? productName : "Loading"} subheader={productDescription}>
-            </CardHeader>
+            <CardHeader title={productName ? productName : "Loading"} subheader={productDescription} />
             <Grid container className="card-detail-content">
                 <Grid item>
                     <CardContent className="detail-left">

@@ -7,7 +7,7 @@ let fakeApiCall = (categoryId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(getProducts(categoryId))
-        }, 2000)
+        }, 500)
     })
 }
 

@@ -4,6 +4,7 @@ import { CartContextProvider } from './context/CartContext'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CartContainer from './components/CartContainer/CartContainer'
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
                 <h1>Contact page under construction.</h1>
               </Route>
               <Route exact path="/cart" >
-                <h1>Cart page under construction.</h1>
+                <CartContainer />
               </Route>
             </main>
           </Switch>

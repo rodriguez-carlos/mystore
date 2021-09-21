@@ -9,7 +9,7 @@ let fakeApiCall = (id) => {
         setTimeout(() => {
             console.log("Calling fake API")
             resolve(getProduct(id))
-        }, 2000)
+        }, 500)
     })
 }
 
