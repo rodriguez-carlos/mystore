@@ -20,7 +20,7 @@ const CartContainer = () => {
                         <CartSummary />
                     </Grid>
                 </Grid>
-                :<Link to="/"><h1>Cart is empty. Click here to fix that!</h1></Link>
+                :<Link to="/"><h1>Your cart is empty. Click here to fix that!</h1></Link>
             }
         </div>
     )

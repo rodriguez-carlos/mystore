@@ -5,10 +5,6 @@ import { Delete } from '@material-ui/icons';
 import ItemCount from '../ItemCount/ItemCount';
 
 const Cart = ({cart, modifyQuantity, removeItem}) => {
-    console.log(cart)
-    const deleteButton = (item) => {
-        removeItem(item)
-    }
     return (
         <ul className="cart-list">
             {cart.map(p => <li key={p.item.productId}>
@@ -24,7 +20,7 @@ const Cart = ({cart, modifyQuantity, removeItem}) => {
                                 />
                             </Grid>
                             <Grid item xs={12} sm={3}>
-                                <Delete className="delete-button" onClick={removeItem} />
+                                <Delete className="delete-button" onClick={() => removeItem(p.item)} />
                                 <ItemCount 
                                     item={p}
                                     initial={p.quantity}

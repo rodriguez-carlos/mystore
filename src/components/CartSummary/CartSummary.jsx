@@ -1,12 +1,12 @@
 import { Box, TextField, Card, CardHeader, Typography } from '@material-ui/core';
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { CartContext } from '../../context/CartContext';
 
 const CartSummary = () => {
     const { calculateTotal, orderTotal, cart } = useContext(CartContext)
     useEffect(() => {
         calculateTotal()
-    }, [cart])
+    }, [cart, calculateTotal])
     return (
         <Card>
             <CardHeader title="Checkout"/>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import productsList from '../../assets/datamock'
+import {getFirestore} from '../../service/getFirebase'
 
 let fakeApiCall = (categoryId) => {
     return new Promise((resolve, reject) => {
@@ -10,6 +11,11 @@ let fakeApiCall = (categoryId) => {
         }, 500)
     })
 }
+
+const db = getFirestore()
+const itemCollection = db.collection('items')
+itemCollection.get()
+    .then(resp => console.log(resp))
 
 function getProducts (categoryId) {
     if(categoryId) {
