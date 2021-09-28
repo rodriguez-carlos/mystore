@@ -1,28 +1,20 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import productsList from '../../assets/datamock'
 import ItemDetail from '../ItemDetail/ItemDetail'
-
-console.log(productsList)
-let fakeApiCall = (id) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log("Calling fake API")
-            resolve(getProduct(id))
-        }, 500)
-    })
-}
-
-function getProduct(id) {
-    return productsList.find(p => p.productId === id)
-}
+import {getFirestore} from '../../service/getFirebase'
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState({})
     const { paramId } = useParams()
     useEffect(() => {
-        fakeApiCall(paramId)
-            .then((res) => { setProduct(res) })
+        const DBquery = getFirestore().collection('items')
+        DBquery.doc(paramId).get()
+            .then(data => {
+                if(data.exists) {
+                    setProduct({productId: data.id, ...data.data()})
+                }
+                return;
+            })
             .catch(e => console.log(e))
         }, [paramId])
     return (

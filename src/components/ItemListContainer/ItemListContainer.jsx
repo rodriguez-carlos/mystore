@@ -1,39 +1,25 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
-import productsList from '../../assets/datamock'
 import {getFirestore} from '../../service/getFirebase'
-
-let fakeApiCall = (categoryId) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(getProducts(categoryId))
-        }, 500)
-    })
-}
-
-const db = getFirestore()
-const itemCollection = db.collection('items')
-itemCollection.get()
-    .then(resp => console.log(resp))
-
-function getProducts (categoryId) {
-    if(categoryId) {
-        return productsList.filter(p => p.category.toLowerCase() === categoryId.slice(0, -1)) //Slice removes the S that I want in the route and navbar
-    } else {
-        return productsList
-    }
-}
 
 function ItemListContainer ({greeting}) {
     const addToCart = () => console.log('Added to cart')
     const [products, setProducts] = useState([])
     const { categoryId } = useParams()
     useEffect(() => {
-        setProducts([])
-        fakeApiCall(categoryId)
-            .then((res) => { setProducts(res) })
-            .catch(e => console.log(e))
+        const DBquery = getFirestore().collection('items')
+        const queryCondition = (categoryId ? 
+                DBquery.where('category', "==", categoryId.slice(0, -1))
+            : 
+                DBquery)
+        queryCondition.get()
+            .then(data => {
+                if(data.size === 0) {
+                    console.log("No products found!")
+                }
+                setProducts(data.docs.map(p =>({productId: p.id, ...p.data()})))
+            })
     }, [categoryId])
     return (
         <div className="item-list-container">

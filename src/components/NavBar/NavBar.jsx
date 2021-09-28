@@ -18,13 +18,13 @@ function NavBar() {
             path: "/contact"
         }
     ]
-    const { cart } = useContext(CartContext)
+    const { cart, totalItemsInCart } = useContext(CartContext)
     return (
         <nav className="nav-bar">
             <Link to="/"><img src="https://picsum.photos/200" alt=""/></Link>
             <ul className="nav-bar-options">
                 {optionsNavBar.map(opt => <Link to={opt.path}><li key={opt}>{opt.option}</li></Link>)}
-                <Link to="/cart"><li><ShoppingCartIcon />{cart.length >=1 ? cart.length : ""}</li></Link>
+                <Link to="/cart"><li><ShoppingCartIcon />{cart.length > 0 ? totalItemsInCart() : ""}</li></Link>
             </ul>
         </nav>
     );

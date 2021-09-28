@@ -39,6 +39,10 @@ export const CartContextProvider = ({children}) => {
         console.log(totalsPerItem, totalInCart)
         setOrdertotal(totalInCart)
     }
+    const totalItemsInCart = () => {
+        let quantitiesArray = cart.map (p => p.quantity)
+        return quantitiesArray.reduce((a,b) => a + b)
+    }
 
     return (
         <CartContext.Provider value={{ 
@@ -48,6 +52,7 @@ export const CartContextProvider = ({children}) => {
             removeItem, 
             modifyQuantity, 
             calculateTotal, 
+            totalItemsInCart,
             orderTotal,
             cart }}>
             {children}
