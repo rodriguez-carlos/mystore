@@ -15,3 +15,5 @@ const app = firebase.initializeApp(firebaseConfig)
 export function getFirestore() {
     return firebase.firestore(app)
 }
+
+export const thisDate = firebase.firestore.Timestamp.fromDate(new Date())

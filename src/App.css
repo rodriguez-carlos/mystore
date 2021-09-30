@@ -102,6 +102,11 @@ a {
   margin: 10px;
 }
 
+.purchase-form .MuiButton-root {
+  width: 100%
+}
+
 .delete-button {
   cursor: pointer;
+  align-self: right;
 }

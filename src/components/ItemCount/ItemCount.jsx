@@ -1,12 +1,12 @@
-import { useState  } from 'react'
-import Button from '@material-ui/core/Button'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import { Link } from 'react-router-dom'
-import AddIcon from '@material-ui/icons/Add'
+import { useState  } from 'react';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import { Link } from 'react-router-dom';
+import AddIcon from '@material-ui/icons/Add';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'; 
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import RemoveIcon from '@material-ui/icons/Remove'
+import RemoveIcon from '@material-ui/icons/Remove';
 
 const ItemCount = ({item, stock, initial, onAdd, cartActions, disableAddAndRemove, countInCart, modifyQuantity, removeItem }) => {
     const [count, setCount] = useState(parseInt(initial))
