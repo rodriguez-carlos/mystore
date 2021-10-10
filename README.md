@@ -4,7 +4,7 @@ Dezigner is an e-commerce where users can buy designer products. It is built usi
 
 ## Installation
 
-Clone this repository. You will need to have `npm` installed. Head to the project directory and run:
+Clone this repository. You will need to have `Node` and `npm` installed. Head to the project directory and run:
 
 ```bash
 npm install
