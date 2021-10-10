@@ -4,6 +4,7 @@ import dezignerLogo from "../../assets/dezigner-logo.png"
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
     const optionsNavBar = [
@@ -26,7 +27,7 @@ function NavBar() {
             <Link to="/"><img src={dezignerLogo} alt=""/></Link>
             <ul className="nav-bar-options">
                 {optionsNavBar.map(opt => <Link to={opt.path}><li key={opt}><Typography variant="h5">{opt.option}</ Typography></li></Link>)}
-                <Link to="/cart"><li><ShoppingCartIcon />{cart.length > 0 ? totalItemsInCart() : ""}</li></Link>
+                <Link to="/cart"><li><CartWidget />{cart.length > 0 ? totalItemsInCart() : ""}</li></Link>
             </ul>
         </Toolbar>
     );

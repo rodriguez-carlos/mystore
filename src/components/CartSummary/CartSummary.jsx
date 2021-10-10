@@ -47,7 +47,7 @@ const CartSummary = ({ formData, setFormData, initialForm, formValid}) => {
         calculateTotal()
     }, [cart, calculateTotal])
     return (
-        <Card>
+        <Card className="cart-summary">
             <CardHeader title="Checkout"/>
             <Box className="purchase-form"
             component="form"
@@ -90,7 +90,7 @@ const CartSummary = ({ formData, setFormData, initialForm, formValid}) => {
                     >Place order
                 </Button>
             </Box>
-            <Typography variant="h5">{`Total: ${orderTotal}`}</Typography>
+            <CardHeader title={`Total: ${orderTotal}`}></CardHeader>
         </Card>
     )
 }

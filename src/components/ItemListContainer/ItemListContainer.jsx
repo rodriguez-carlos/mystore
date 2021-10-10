@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
-import {getFirestore} from '../../service/getFirebase'
+import { getFirestore } from '../../service/getFirebase'
+import CategoryBanner from '../CategoryBanner/CategoryBanner'
 
 function ItemListContainer ({greeting}) {
     const addToCart = () => console.log('Added to cart')
     const [products, setProducts] = useState([])
     const { categoryId } = useParams()
+    console.log(categoryId)
     useEffect(() => {
         const DBquery = getFirestore().collection('items')
         const queryCondition = (categoryId ? 
@@ -22,12 +24,14 @@ function ItemListContainer ({greeting}) {
             })
     }, [categoryId])
     return (
-        <div className="item-list-container">
-            <h1>{greeting ? greeting : (categoryId === "garments" ? "Garments" : "Ornaments")}</h1>
-            {products ? <ItemList 
-                onAdd={addToCart}
-                products={products}
-            /> : <p>Loading</p>}
+        <div>
+            <CategoryBanner greeting={greeting}/>
+            <div className="item-list-container">
+                {products ? <ItemList 
+                    onAdd={addToCart}
+                    products={products}
+                /> : <p>Loading</p>}
+            </div>
         </div>
     );
 }

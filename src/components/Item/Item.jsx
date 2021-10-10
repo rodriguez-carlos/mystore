@@ -7,13 +7,16 @@ const Item = ({title, stock, image, category}) => {
     return (
         <Card elevation={5}>
             <CardActionArea>
-                <CardHeader title={title} subheader={category}/>
                 <CardMedia 
                     component="img"
                     image={image}
                     title={title}
-                    height="140"
+                    height="160"
                 />
+                <CardHeader className="item-card-text" title={title} subheader={
+                    category === 'ornament' ? 'Ornament' : 'Garment'
+                }/>
+                
             </CardActionArea>
         </Card>
     )

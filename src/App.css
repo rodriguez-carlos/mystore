@@ -1,5 +1,5 @@
 body {
-  background-color: #e4dfda;
+  background-color: #F4F7F5;
   color: #27233A;
 }
 
@@ -9,18 +9,22 @@ body {
 }
 
 header {
-  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  color: #27233A;
+  background-color: #F4F7F5;
+  z-index: 2;
+  box-shadow: 0 1px 5px 0 #00000050;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  border-bottom: 1px solid black;
 }
 
 .nav-bar img {
-  height: 100px;
+  height: 70px;
   margin-left: 10%;
   border-radius: 50%;
 }
@@ -40,16 +44,22 @@ header {
   height: 50px;
 }
 
-.App-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.item-list-container {
+  flex: 1;
   margin: 0 15% 0 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.item-list-container {
-  flex:1;
+.item-list-container .item-card-text .MuiCardHeader-title {
+  font-size: 1rem;
 }
+
+.item-list-container .item-card-text .MuiCardHeader-subheader {
+  font-size: 0.8rem;
+}
+
 
 .item-count-actions {
   display: flex;
@@ -64,19 +74,23 @@ a {
 }
 
 .item-detail-container {
+  margin-top: 1rem;
   min-width: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card-detail {
-  width: 100%;
+  width: 70%;
 }
 
-.card-detail-container {
-  width: 100%;
+.card-detail-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.card-detail-content .MuiGrid-item:first-child {
+  flex: 1;
 }
 
 .detail-right {
@@ -88,6 +102,15 @@ a {
 
 .cart-container {
   flex: 1;
+}
+
+.cart-container>.MuiGrid-container {
+  margin: 0 15% 0 15%;
+  width: 70%;
+}
+
+.cart-summary {
+  margin-left: 2rem;
 }
 
 .image-in-cart.MuiCardMedia-media {
@@ -115,4 +138,28 @@ a {
   cursor: pointer;
   align-self: right;
   padding-left: 80%;
+}
+
+.category-banner {
+  width: 100%;
+  margin-top: 0;
+  position: relative;
+  height: 182px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-banner img {
+  width: 100%;
+  position: absolute;
+}
+
+.banner-title {
+  position: absolute;
+}
+
+.detail-loader {
+  width: 100px;
+  align-self: center;
 }

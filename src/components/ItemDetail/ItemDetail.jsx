@@ -5,6 +5,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import Typography from '@material-ui/core/Typography'
+import { CircularProgress } from '@material-ui/core'
 import { Grid } from '@material-ui/core'
 import ItemCount from '../ItemCount/ItemCount'
 
@@ -21,14 +22,15 @@ const ItemDetail = ({ product }) => {
     }
     return (
         <Card elevation={3} className="card-detail">
-            <CardHeader title={productName ? productName : "Loading"} subheader={productDescription} />
+            <CardHeader title={productName ? productName : ""} subheader={productDescription} />
+            <div class="detail-loader">{productName ? "" : <CircularProgress color="success" />}</div>
             <Grid container className="card-detail-content">
                 <Grid item>
                     <CardContent className="detail-left">
                         <CardMedia 
                             component="img"
                             image={image}
-                            height="350"
+                            height="400"
                         />
                     </CardContent>
                 </Grid>

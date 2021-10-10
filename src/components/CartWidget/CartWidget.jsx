@@ -1,9 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 function CartWidget () {
     return (
-        <FontAwesomeIcon icon={faShoppingCart}/>
+        <ShoppingCartIcon />
     );
 }
 
