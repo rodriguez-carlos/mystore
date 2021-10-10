@@ -1,4 +1,5 @@
 import { CardContent, Grid, CardMedia } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import Card  from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader';
 import { Delete } from '@material-ui/icons';
@@ -9,7 +10,7 @@ const Cart = ({cart, modifyQuantity, removeItem}) => {
         <ul className="cart-list">
             {cart.map(p => <li key={p.item.productId}>
                 <Card elevation={5}>
-                    <CardHeader title={p.item.productName}/>
+                    <Link to={`/product/${p.item.productId}`}><CardHeader title={p.item.productName}/></Link>
                     <CardContent>
                         <Grid container>
                             <Grid item xs={12} sm={9}>

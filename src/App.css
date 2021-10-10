@@ -1,3 +1,8 @@
+body {
+  background-color: #e4dfda;
+  color: #27233A;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -109,4 +114,5 @@ a {
 .delete-button {
   cursor: pointer;
   align-self: right;
+  padding-left: 80%;
 }

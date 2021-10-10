@@ -1,4 +1,6 @@
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { useMediaQuery, Toolbar, Typography } from '@material-ui/core';
+import dezignerLogo from "../../assets/dezigner-logo.png"
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
@@ -20,13 +22,13 @@ function NavBar() {
     ]
     const { cart, totalItemsInCart } = useContext(CartContext)
     return (
-        <nav className="nav-bar">
-            <Link to="/"><img src="https://picsum.photos/200" alt=""/></Link>
+        <Toolbar className="nav-bar">
+            <Link to="/"><img src={dezignerLogo} alt=""/></Link>
             <ul className="nav-bar-options">
-                {optionsNavBar.map(opt => <Link to={opt.path}><li key={opt}>{opt.option}</li></Link>)}
+                {optionsNavBar.map(opt => <Link to={opt.path}><li key={opt}><Typography variant="h5">{opt.option}</ Typography></li></Link>)}
                 <Link to="/cart"><li><ShoppingCartIcon />{cart.length > 0 ? totalItemsInCart() : ""}</li></Link>
             </ul>
-        </nav>
+        </Toolbar>
     );
 }
 

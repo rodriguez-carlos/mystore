@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Grid } from '@material-ui/core'
+import { Grid, Button } from '@material-ui/core'
 import Cart from "../Cart/Cart";
 import CartSummary from "../CartSummary/CartSummary";
 import { Link } from "react-router-dom";
@@ -38,7 +38,7 @@ const CartContainer = () => {
                             initialForm={initialForm}/>
                     </Grid>
                 </Grid>
-                :<Link to="/"><h1>Your cart is empty. Click here to fix that!</h1></Link>
+                :<><h3>Whoops! Your cart is empty</h3><Link to="/"><Button variant="contained">back home</Button></Link></>
             }
         </div>
     )

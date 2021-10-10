@@ -3,7 +3,7 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardHeader from '@material-ui/core/CardHeader'
 
-const Item = ({title, stock, image, category, description}) => {
+const Item = ({title, stock, image, category}) => {
     return (
         <Card elevation={5}>
             <CardActionArea>
@@ -15,7 +15,6 @@ const Item = ({title, stock, image, category, description}) => {
                     height="140"
                 />
             </CardActionArea>
-
         </Card>
     )
 }
