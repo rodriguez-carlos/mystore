@@ -13,7 +13,6 @@ You can then start the app by running:
 ```bash
 npm start
 ```
-Your terminal will then
 ## External Libraries
 Note: these libraries require no further installation.
 
