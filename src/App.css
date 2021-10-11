@@ -126,6 +126,11 @@ a {
   justify-content: space-between;
 }
 
+.purchase-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .purchase-form .MuiFormControl-root {
   margin: 10px;
 }
@@ -141,18 +146,22 @@ a {
 }
 
 .category-banner {
+  color: white;
   width: 100%;
   margin-top: 0;
+  margin-bottom: 3rem;
   position: relative;
   height: 182px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .category-banner img {
   width: 100%;
   position: absolute;
+  object-fit: contain;
 }
 
 .banner-title {

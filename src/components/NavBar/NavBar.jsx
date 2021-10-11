@@ -1,5 +1,4 @@
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { useMediaQuery, Toolbar, Typography } from '@material-ui/core';
+import { Toolbar, Typography } from '@material-ui/core';
 import dezignerLogo from "../../assets/dezigner-logo.png"
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -16,10 +15,6 @@ function NavBar() {
             option: "Ornaments",
             path: "/category/ornaments"
         },
-        {
-            option: "Contact",
-            path: "/contact"
-        }
     ]
     const { cart, totalItemsInCart } = useContext(CartContext)
     return (
