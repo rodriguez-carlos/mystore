@@ -29,10 +29,10 @@ const CartContainer = ({greeting}) => {
             <CategoryBanner greeting={greeting} />
             {cart.length >= 1 ?
                 <Grid container>
-                    <Grid item xs={12} sm={8}>
+                    <Grid item xs={12} sm={12} md={8}>
                         <Cart  cart={cart} modifyQuantity={modifyQuantity} removeItem={removeItem}/>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={12} md={4}>
                         <CartSummary 
                             formData={formData} 
                             setFormData={setFormData} 

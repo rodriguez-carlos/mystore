@@ -10,7 +10,7 @@ const Cart = ({cart, modifyQuantity, removeItem}) => {
         <ul className="cart-list">
             {cart.map(p => <li key={p.item.productId}>
                 <Card elevation={5}>
-                    <Link to={`/product/${p.item.productId}`}><CardHeader title={p.item.productName}/></Link>
+                    <Link to={`/product/${p.item.productId}`}><CardHeader title={p.item.productName}><Delete className="delete-button" onClick={() => removeItem(p.item)} /></CardHeader></Link>
                     <CardContent>
                         <Grid container>
                             <Grid item xs={12} sm={9}>

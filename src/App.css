@@ -110,7 +110,14 @@ a {
 }
 
 .cart-summary {
-  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 960px) {
+  .cart-summary {
+    margin-top: auto;
+    margin-left: 2rem;
+  }
 }
 
 .image-in-cart.MuiCardMedia-media {
@@ -124,6 +131,10 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.cart-list li {
+  margin-bottom: 1rem;
 }
 
 .purchase-form {

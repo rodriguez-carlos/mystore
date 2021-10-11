@@ -32,17 +32,15 @@ const ItemCount = ({item, stock, initial, onAdd, cartActions, disableAddAndRemov
                     <Button
                         disabled={count <=0 || disableAddAndRemove}
                         onClick={decrementCount}
-                        color='primary'
+                        color="primary"
                         variant="contained"
-                        size="large"
                     ><RemoveIcon /></Button>
                     <p>{count}</p>
                     <Button
                         disabled={count >= stock || disableAddAndRemove}
                         onClick={incrementCount}
-                        color='primary'
+                        color="primary"
                         variant="contained"
-                        size="large"
                     ><AddIcon /></Button>
                 </CardActions>
                 <CardActions classes={{ root: "item-count-actions" }}>
